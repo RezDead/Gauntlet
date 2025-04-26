@@ -7,7 +7,7 @@
 #include "EnemyStats.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent),Blueprintable )
 class GAUNTLET_API UEnemyStats : public UActorComponent
 {
 	GENERATED_BODY()
