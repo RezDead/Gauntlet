@@ -1,15 +1,13 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+/*
+ * Author: Kroeger-Miller, Julian
+ * Last Updated: 4/26/2025
+ * Handles player taking damage, broadcasting death event, taking damage every second, and holds player stats/data.
+ * Shows how to call events, call functions after delay, and print to screen.
+ */
 
 #include "PlayerData.h"
 #include "TimerManager.h"
 #include "Engine/Engine.h"
-
-#define DELAY(time, block)\
-{\
-FTimerHandle TimerHandle;\
-GetWorld()->GetTimerManager().SetTimer(TimerHandle, [&]()block, time, false);\
-}
 
 void UPlayerData::BeginPlay()
 {

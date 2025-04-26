@@ -1,4 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/*
+ * Author: Kroeger-Miller, Julian
+ * Last Updated: 4/26/2025
+ * Handles player taking damage, broadcasting death event, taking damage every second, and holds player stats/data.
+ * Shows how to declare an event, declare variables, allow event to be called in BP,declare functions, and put categories on variables.
+ */
 
 #pragma once
 
