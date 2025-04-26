@@ -1,21 +1,28 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "EnemyHealth.h"
+#include "EnemyStats.h"
 
 // Sets default values for this component's properties
-UEnemyHealth::UEnemyHealth()
+UEnemyStats::UEnemyStats()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
 	// ...
+
+
+	EnemyMaxHealth = 20;
+	Speed = 1;
+	PointsWorth = 30;
+
+
 }
 
 
 // Called when the game starts
-void UEnemyHealth::BeginPlay()
+void UEnemyStats::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -26,14 +33,14 @@ void UEnemyHealth::BeginPlay()
 
 
 // Called every frame
-void UEnemyHealth::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UEnemyStats::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
 }
 
-void UEnemyHealth::TakeDamage(int DamageTaken) {
+void UEnemyStats::TakeDamage(int DamageTaken) {
 
 	EnemyCurrentHealth -= DamageTaken;
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("EnemyHealth: %i"), EnemyCurrentHealth));
@@ -43,7 +50,7 @@ void UEnemyHealth::TakeDamage(int DamageTaken) {
 }
 
 
-int UEnemyHealth::Death() {
+int UEnemyStats::Death() {
 
 	AActor* OwningActor = GetOwner();
 	OwningActor->Destroy();
