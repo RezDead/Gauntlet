@@ -32,6 +32,7 @@ UPlayerData::UPlayerData()
 	AttackSpeed = 1.0f;
 	MagicPower = 1;
 	ShotSpeed = 1.0f;
+	ShotSize = 1.0f;
 }
 
 void UPlayerData::IncreaseScore(const int Score)

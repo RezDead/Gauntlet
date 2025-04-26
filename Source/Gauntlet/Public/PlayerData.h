@@ -45,6 +45,8 @@ public:
 	float MagicPower;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerStats)
 	float ShotSpeed;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerStats)
+	float ShotSize;
 
 	//Allows event to be called/processed in blueprint
 	UPROPERTY(BlueprintAssignable)
