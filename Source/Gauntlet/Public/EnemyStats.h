@@ -6,6 +6,12 @@
 #include "Components/ActorComponent.h"
 #include "EnemyStats.generated.h"
 
+UENUM(BlueprintType)
+enum class EnemyAttackType : uint8
+{
+	Follow UMETA(DisplayName = "Follow"),
+	StayBack UMETA(DisplayName = "StayBack")
+};
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent),Blueprintable )
 class GAUNTLET_API UEnemyStats : public UActorComponent
@@ -16,6 +22,9 @@ public:
 	// Sets default values for this component's properties
 	UEnemyStats();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemy Type")
+	EnemyAttackType AttackType;
+
 	UFUNCTION(BlueprintCallable, Category = "DamageSystem")
 	void TakeDamage(int Damage);
 
@@ -24,6 +33,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemy Stats")
 	float Speed;
+
+	
+
 
 protected:
 	// Called when the game starts
