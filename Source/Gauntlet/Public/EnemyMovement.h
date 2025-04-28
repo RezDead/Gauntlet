@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "EnemyStats.h"
 #include "EnemyMovement.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), Blueprintable )
 class GAUNTLET_API UEnemyMovement : public UActorComponent
 {
 	GENERATED_BODY()
@@ -21,8 +22,11 @@ protected:
 	virtual void BeginPlay() override;
 
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat Values")
+	UPROPERTY(BlueprintReadWrite, Category = "Stat Values")
 	float Speed;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Enemy Type")
+	EnemyAttackType AttackType;
 
 public:	
 	// Called every frame

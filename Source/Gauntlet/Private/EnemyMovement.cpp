@@ -2,7 +2,7 @@
 
 
 #include "EnemyMovement.h"
-#include "EnemyStats.h"
+
 
 
 
@@ -14,6 +14,20 @@ UEnemyMovement::UEnemyMovement()
 	PrimaryComponentTick.bCanEverTick = true;
 
 	// ...
+	AActor* OwningActor = GetOwner();
+
+	if (OwningActor) {
+
+		UEnemyStats* StatsComp = OwningActor->FindComponentByClass<UEnemyStats>();
+
+		if (StatsComp) {
+			Speed = StatsComp->Speed;
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("EnemySpeed: %f"), Speed));
+
+			AttackType = StatsComp->AttackType;
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("EnemyAttackType: %s"), *UEnum::GetValueAsString(AttackType)));
+		}
+	}
 }
 
 
@@ -24,17 +38,7 @@ void UEnemyMovement::BeginPlay()
 
 	// ...
 
-	AActor* OwningActor = GetOwner();
-
-	if (OwningActor) {
-
-		UEnemyStats* StatsComp = OwningActor->FindComponentByClass<UEnemyStats>();
-
-		if (StatsComp) {
-			Speed = StatsComp->Speed;
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("EnemySpeed: %f"), Speed));
-		}
-	}
+	
 	
 }
 
