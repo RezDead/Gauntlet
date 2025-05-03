@@ -40,8 +40,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerStats)
 	int DamagePower;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerStats)
-	float AttackSpeed;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerStats)
 	float MagicPower;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerStats)
 	float ShotSpeed;

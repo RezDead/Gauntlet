@@ -26,10 +26,9 @@ UPlayerData::UPlayerData()
 	PlayerScore = 0;
 	HealthDecreaseRate = 1;
 	PlayerHealth = 700;
-	PlayerSpeed = 100;
+	PlayerSpeed = 400;
 	PlayerArmor = 100;
 	DamagePower = 1;
-	AttackSpeed = 1.0f;
 	MagicPower = 1;
 	ShotSpeed = 1.0f;
 	ShotSize = 1.0f;
